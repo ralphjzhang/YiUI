@@ -26,12 +26,25 @@ export const constantRouterMap = [
     path: '/',
     component: Layout,
     redirect: '/dashboard',
-    name: 'Dashboard',
+    name: 'YiUI',
     hidden: true,
     children: [{
       path: 'dashboard',
       component: _import('dashboard/index')
     }]
+  },
+
+  {
+    path: '/form',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'Bang',
+        component: _import('form/index'),
+        meta: { title: 'Bang', icon: 'form' }
+      }
+    ]
   },
 
   {
@@ -52,19 +65,6 @@ export const constantRouterMap = [
         name: 'Tree',
         component: _import('tree/index'),
         meta: { title: 'Tree', icon: 'tree' }
-      }
-    ]
-  },
-
-  {
-    path: '/form',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        name: 'Form',
-        component: _import('form/index'),
-        meta: { title: 'Form', icon: 'form' }
       }
     ]
   },
